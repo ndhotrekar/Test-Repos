@@ -1,0 +1,48 @@
+---
+title: "UN Project Code"
+author: "Neeti"
+date: "March 23, 2017"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+#Create a stacked bar chart
+# Create the input vectors.
+colors <- c("green","orange")
+region <- c("Africa","Americas","SE Asia","Europe","East. Med","Western Pacific")
+gender <- c("Male","Female")
+
+# Create the matrix of the values.
+Values <- matrix(c(11013,42350,58209,83049,14189,279139,8890,28807,28190,55462,7749,132760),nrow = 2,ncol = 6,byrow = TRUE)
+
+# Create the bar chart.
+barplot(Values,main = "Stomach Cancer Deaths by Gender and WHO Regions",names.arg = region,xlab = "WHO Region",ylab = "Stomach Cancer Deaths",
+        col = colors)
+
+# Add the legend to the chart.
+legend("topleft", gender, cex = 0.9, fill = colors)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
